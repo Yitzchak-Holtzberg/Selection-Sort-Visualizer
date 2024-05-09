@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="733ab964-6d4b-446e-a336-436d7ca1bd79" name="Changes" comment="Bar chart appears no buttons or sorting happening yet">
+    <list default="true" id="733ab964-6d4b-446e-a336-436d7ca1bd79" name="Changes" comment="Reset button works now still missing the actual sorting logic">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/selection/AnimatedSelectionSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/selection/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/selection/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/selection/HelloApplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +17,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "condorthe2nd"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c5239bef-1497-4b46-b9b2-16e8aef3fe42" />
+        <option name="url" value="https://github.com/condorthe2nd/Selection-Sort-Visualizer.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -34,6 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AnimatedSelectionSort.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -50,8 +67,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.selection.HelloApplication" />
+    <configuration name="AnimatedSelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.selection.AnimatedSelectionSort" />
       <module name="Selection" />
       <extension name="coverage">
         <pattern>
@@ -65,7 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.AnimatedSelectionSort" />
       </list>
     </recent_temporary>
   </component>
@@ -84,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715266147480</updated>
-      <workItem from="1715266148609" duration="5047000" />
+      <workItem from="1715266148609" duration="8240000" />
     </task>
     <task id="LOCAL-00001" summary="Bar chart appears no buttons or sorting happening yet">
       <option name="closed" value="true" />
@@ -94,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715270815658</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Reset button works now still missing the actual sorting logic">
+      <option name="closed" value="true" />
+      <created>1715272430206</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715272430206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bar chart appears no buttons or sorting happening yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bar chart appears no buttons or sorting happening yet" />
+    <MESSAGE value="Reset button works now still missing the actual sorting logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset button works now still missing the actual sorting logic" />
   </component>
 </project>
