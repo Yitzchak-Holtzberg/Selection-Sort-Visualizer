@@ -1,6 +1,10 @@
 package com.example.selection;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -13,37 +17,54 @@ import javafx.scene.layout.StackPane;
 import java.util.Arrays;
 
 public class HelloApplication extends Application {
+    public int[] arrayToSort = randomArray();
+
     @Override
     public void start(Stage stage) {
-        int [] arrayToSort = randomArray();
+        Button resetButton = new Button("Reset");
+        Button nextStepButton = new Button("Next Step");
+
+        HBox hbox = new HBox(resetButton, nextStepButton);
+        hbox.setAlignment(Pos.CENTER);
+
 
         CategoryAxis xAxis = new CategoryAxis();
+        NumberAxis yAxis = new NumberAxis();
+        BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
+        XYChart.Series<String, Number> populations = new XYChart.Series<>();
+
+        resetButton.setOnAction(e -> resetChart(barChart, populations));
+
+        //nextStepButton.setOnAction(e -> nextStep());  // Assuming nextStep is properly defined elsewhere
+
         xAxis.setTickLabelsVisible(false);
         xAxis.setTickMarkVisible(false);
-
-
-        NumberAxis yAxis = new NumberAxis();
         yAxis.setTickLabelsVisible(false);
         yAxis.setTickMarkVisible(false);
-
-        BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
 
         barChart.setTitle("Selection Sort");
         barChart.setLegendVisible(false);
 
-        XYChart.Series<String, Number> populations = new XYChart.Series<>();
+        VBox vbox = new VBox(barChart, hbox);
+        Scene view = new Scene(vbox, 800, 400);
 
-        createChartFromCurrentData(arrayToSort, populations);
-
-        barChart.getData().add(populations);
-        Scene view = new Scene(barChart, 640, 480);
-        stage.setFullScreen(true);
         stage.setScene(view);
         stage.show();
+
+        resetChart(barChart, populations);  // Initial chart setup
+    }
+
+    private void resetChart(BarChart<String, Number> barChart, XYChart.Series<String, Number> populations) {
+        arrayToSort = randomArray();
+        populations.getData().clear();  // Clear previous data
+        createChartFromCurrentData(arrayToSort, populations);
+        if (!barChart.getData().contains(populations)) {
+            barChart.getData().add(populations);
+        }
     }
 
     private static void createChartFromCurrentData(int[] arrayToSort, XYChart.Series<String, Number> populations) {
-        for(int i =19; i>-1;i--){
+        for (int i = 19; i > -1; i--) {
             int k = arrayToSort[i];
             XYChart.Data<String, Number> data = new XYChart.Data<>(Integer.toString(i), k);
             data.setNode(new StackPane(new Label(Integer.toString(k))));
@@ -52,21 +73,16 @@ public class HelloApplication extends Application {
     }
 
     public static int[] randomArray() {
-        // Generate the numbers 1 through 20 in a random order
-        int[] numbers = new int[20]; // Array to store numbers 1-20
+        int[] numbers = new int[20];
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = i + 1; // Fill the array with numbers 1 to 20
+            numbers[i] = i + 1;
         }
-
-        // Shuffle the array using Fisher-Yates shuffle algorithm
         for (int i = numbers.length - 1; i > 0; i--) {
-            int j = (int) (Math.random() * (i + 1)); // Random index from 0 to i
-            // Swap numbers[i] with the element at random index
+            int j = (int) (Math.random() * (i + 1));
             int temp = numbers[i];
             numbers[i] = numbers[j];
             numbers[j] = temp;
         }
-        System.out.println(Arrays.toString(numbers));
         return numbers;
     }
 }
